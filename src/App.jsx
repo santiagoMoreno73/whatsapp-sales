@@ -1,14 +1,40 @@
-// components
-import Login from "./components/Login";
+import React, { useState } from "react";
+
+// route
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+// provider
 import { ThemeProvider } from "styled-components";
-import GlobalStyle from "./components/theme/GlobalStyle";
+
+// theme
+import GlobalStyle from "./theme/GlobalStyle";
+import { lightTheme, darkTheme } from "./theme/theme";
+
+// components
+import Login from "./pages/Login/Login";
+import Dashboard from "./pages/Dashboard/Dashboard";
+
+import { ThemeContext } from "styled-components";
+import Layout from "./components/Layout/Layout";
 
 function App() {
+  const [theme, setTheme] = useState("light");
+  const themeStyle = theme === "light" ? lightTheme : darkTheme;
+
   return (
-    <ThemeProvider theme={GlobalStyle}>
-      <GlobalStyle />
-      <Login />
-    </ThemeProvider>
+    <ThemeContext.Provider value={{ setTheme, theme }}>
+      <BrowserRouter>
+        <ThemeProvider theme={themeStyle}>
+          <GlobalStyle />
+          <Layout>
+            <Routes>
+              <Route exact path="/" element={<Login />} />
+              <Route exact path="/dashboard" element={<Dashboard />} />
+            </Routes>
+          </Layout>
+        </ThemeProvider>
+      </BrowserRouter>
+    </ThemeContext.Provider>
   );
 }
 
