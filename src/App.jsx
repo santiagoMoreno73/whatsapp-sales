@@ -13,9 +13,9 @@ import { lightTheme, darkTheme } from "./theme/theme";
 // components
 import Login from "./pages/Login/Login";
 import Dashboard from "./pages/Dashboard/Dashboard";
-
-import { ThemeContext } from "styled-components";
 import Layout from "./components/Layout/Layout";
+
+export const ThemeContext = React.createContext(null);
 
 function App() {
   const [theme, setTheme] = useState("light");

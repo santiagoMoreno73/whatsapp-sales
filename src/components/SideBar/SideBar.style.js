@@ -103,3 +103,58 @@ export const SLinkNotification = styled.div`
 
   margin-right: ${v.mdSpacing};
 `;
+
+export const STheme = styled.div`
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+`;
+
+export const SThemeLabel = styled.div`
+  display: block;
+  flex: 1;
+`;
+
+export const SThemeToggler = styled.button`
+  ${btnReset};
+  margin: 1em auto;
+  cursor: pointer;
+  width: 36px;
+  height: 20px;
+  border-radius: 10px;
+  background: ${({ theme, isActive }) =>
+    !isActive ? theme.bg3 : theme.primary};
+
+  position: relative;
+`;
+
+export const SToggleThumb = styled.div`
+  height: 18px;
+  width: 18px;
+  position: absolute;
+  top: 1px;
+  bottom: 1px;
+  transition: 0.2s ease right;
+  right: calc(100% - 18px - 1px);
+  border-radius: 50%;
+  background: ${({ theme }) => theme.bg};
+`;
+
+export const SSidebarButton = styled.button`
+  ${btnReset};
+  position: absolute;
+  top: ${v.xxlSpacing};
+  right: ${({ isOpen }) => (isOpen ? `-16px` : `-40px`)};
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: ${({ theme }) => theme.bg};
+  box-shadow: 0 0 4px ${({ theme }) => theme.bg3},
+    0 0 7px ${({ theme }) => theme.bg};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  transform: ${({ isOpen }) => (!isOpen ? `rotate(180deg)` : `initial`)};
+`;
