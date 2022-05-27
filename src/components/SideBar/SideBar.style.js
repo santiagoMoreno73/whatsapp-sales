@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { btnReset, v } from "../../theme/variables";
 
 export const SSideBar = styled.div`
-  width: ${v.sidebarWidth};
+  width: ${({ isOpen }) => (!isOpen ? `auto` : v.sidebarWidth)};
   background: ${({ theme }) => theme.bg};
   height: 100vh;
   padding: ${v.lgSpacing};
@@ -61,7 +61,8 @@ export const SDivider = styled.div`
 `;
 
 export const SLinkContainer = styled.div`
-  background: transparent;
+  background: ${({ theme, isActive }) =>
+    !isActive ? `transparent` : theme.bg3};
   border-radius: ${v.borderRadius};
   margin: 8px 0;
 
