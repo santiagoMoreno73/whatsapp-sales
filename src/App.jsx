@@ -14,6 +14,7 @@ import { lightTheme, darkTheme } from "./theme/theme";
 import Login from "./pages/Login/Login";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Layout from "./components/Layout/Layout";
+import Categories from "./pages/Categories/Categories";
 
 export const ThemeContext = React.createContext(null);
 
@@ -30,6 +31,7 @@ function App() {
             <Routes>
               <Route exact path="/" element={<Login />} />
               <Route exact path="/dashboard" element={<Dashboard />} />
+              <Route exact path="/categories" element={<Categories />} />
             </Routes>
           </Layout>
         </ThemeProvider>
