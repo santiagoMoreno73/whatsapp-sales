@@ -24,6 +24,19 @@ export const SLogo = styled.div`
   margin-bottom: ${v.lgSpacing};
 `;
 
+export const SLogoOpen = styled.div`
+  display: flex;
+  justify-content: center;
+
+  img {
+    max-width: 40%;
+    height: auto;
+  }
+  cursor: pointer;
+
+  margin-bottom: ${v.lgSpacing};
+`;
+
 export const SSearch = styled.div`
   background: ${({ theme }) => theme.bgAlpha};
   border: 1px solid ${({ theme }) => theme.bgAlpha};

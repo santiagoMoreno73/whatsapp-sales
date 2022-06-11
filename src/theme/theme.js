@@ -4,7 +4,8 @@ export const lightTheme = {
   bg2: "rgba(245,245,245)",
   bg3: "rgba(230,230,230)",
   text: "rgb(45,45,45)",
-  primary: "rgb(52, 131, 235)",
+  primary: "#164194",
+  // primary: "rgb(52, 131, 235)",
 };
 
 export const darkTheme = {
