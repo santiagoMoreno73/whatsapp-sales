@@ -17,7 +17,7 @@ const CardLogin = () => {
     <SCard className="card">
       <div className="card-body">
         <h5 className="card-title d-flex justify-content-center">
-          Sign in your account
+          <b>Inicia Sesion</b>
         </h5>
         <div className="mb-3">
           <label htmlFor="exampleFormControlInput1" className="form-label">
@@ -32,7 +32,7 @@ const CardLogin = () => {
         </div>
         <div className="mb-3">
           <label htmlFor="exampleFormControlInput1" className="form-label">
-            Password
+            Contraseña
           </label>
           <input
             type="password"
@@ -50,10 +50,10 @@ const CardLogin = () => {
               id="flexCheckDefault"
             />
             <label className="form-check-label" htmlFor="flexCheckDefault">
-              Remember me
+              Recordar
             </label>
           </div>
-          <a href="/">Forgot Password ?</a>
+          <a href="/">Olvidaste tu contraseña ?</a>
         </div>
         <div className="d-grid gap-2">
           <button
@@ -61,12 +61,12 @@ const CardLogin = () => {
             className="btn btn-primary"
             onClick={handleChangeRouteTo}
           >
-            Sign in
+            Ingresar
           </button>
         </div>
         <div className="mt-3">
           <p>
-            Don't have an account? <a href="/">Sign up</a>
+            No tienes una cuenta ? <a href="/">Crear cuenta</a>
           </p>
         </div>
       </div>

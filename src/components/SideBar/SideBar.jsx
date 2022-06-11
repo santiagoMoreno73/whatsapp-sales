@@ -18,6 +18,7 @@ import {
   SThemeToggler,
   SToggleThumb,
   SSidebarButton,
+  SLogoOpen,
 } from "./SideBar.style";
 
 import {
@@ -56,7 +57,7 @@ const dataOptions = [
   },
   {
     id: 4,
-    label: "Listas",
+    label: "Productos",
     icon: <AiOutlineApartment />,
     to: "/list",
     notification: 1,
@@ -64,8 +65,8 @@ const dataOptions = [
 ];
 
 const secondDataOptions = [
-  { id: 1, label: "Settings", icon: <AiOutlineSetting />, to: "/" },
-  { id: 2, label: "Logout", icon: <MdLogout />, to: "/" },
+  { id: 1, label: "Configuración", icon: <AiOutlineSetting />, to: "/" },
+  { id: 2, label: "Cerrar sesión", icon: <MdLogout />, to: "/" },
 ];
 
 const SideBar = () => {
@@ -95,9 +96,15 @@ const SideBar = () => {
           <AiOutlineLeft />
         </SSidebarButton>
       </>
-      <SLogo>
-        <img />
-      </SLogo>
+      {sideBarOpen ? (
+        <SLogoOpen>
+          <img src="https://www.megatiendas.co/static/media/logo-megatiendas.7b88c884.png" />
+        </SLogoOpen>
+      ) : (
+        <SLogo isOpen={sideBarOpen}>
+          <img src="https://adminlanding.megatiendas.co/img/logo_megatiendas.f3c02603.png" />
+        </SLogo>
+      )}
       <SSearch
         onClick={handleSearchClick}
         style={!sideBarOpen ? { width: `fit-content` } : {}}
@@ -107,7 +114,7 @@ const SideBar = () => {
         </SSearchIcon>
         <input
           ref={searchRef}
-          placeholder="Search ..."
+          placeholder="Buscar ..."
           style={!sideBarOpen ? { width: 0, padding: 0 } : {}}
         />
       </SSearch>
@@ -139,7 +146,7 @@ const SideBar = () => {
 
       <SDivider>
         <STheme>
-          {sideBarOpen && <SThemeLabel>Dark Mode</SThemeLabel>}
+          {sideBarOpen && <SThemeLabel>Modo Oscuro</SThemeLabel>}
           <SThemeToggler
             isActive={theme === "dark"}
             onClick={() =>
